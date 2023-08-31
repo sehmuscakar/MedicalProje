@@ -1,0 +1,45 @@
+﻿@model List<DataAccessLayer.Entities.Count>
+<section id="counts" class="counts">
+    <div class="container">
+
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="count-box">
+                    <i class="fas fa-user-md"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="@item.Doctors" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Doktorlar</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+                <div class="count-box">
+                    <i class="far fa-hospital"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="@item.Departments" data-purecounter-duration="1" class="purecounter"></span>
+                        <p>Bölümler</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                <div class="count-box">
+                    <i class="fas fa-flask"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="@item.ReserarchLabs" data-purecounter-duration="1" class="purecounter"></span>
+                        <p>Araştırma Laboratuvarları</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                <div class="count-box">
+                    <i class="fas fa-award"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="@item.Awards" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Ödüller</p>
+                </div>
+            </div>
+            }
+        </div>
+
+    </div>
+</section><!-- End Counts Section -->

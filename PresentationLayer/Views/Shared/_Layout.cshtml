@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+    @await Html.PartialAsync("/Views/Partial/HeadPartial.cshtml") @*burda ilgili yolu veriyorsun Views ın içinde Partial kalsörünün içindki HeadPartial.cshtml viewvi yani,statik olanları partial ile 
+parçaladım ,dinamik olanları component ile parçaladım.
+    *@
+
+<body>
+
+    <!-- ======= Top Bar ======= -->
+    @await Component.InvokeAsync("Topbar")
+
+    <!-- ======= Header ======= -->
+    @await Html.PartialAsync("/Views/Partial/HeaderPartial.cshtml")
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container">
+            <h1>Hoşgeldiniz</h1>
+            <h2>Sağlık, vücutları sağlam olanların başına konmuş bir taçtır.</h2>
+             <h2> (Hz. Muhammet s.a.v.) </h2>
+        </div>
+    </section><!-- End Hero -->
+
+    <main id="main">
+
+        <!-- ======= Why Us Section ======= -->
+    @await Component.InvokeAsync("WhyUs")
+
+        <!-- ======= About Section ======= -->
+        @await Component.InvokeAsync("Business")
+
+        <!-- ======= Counts Section ======= -->
+        @await Component.InvokeAsync("Count")
+        <!-- ======= Services Section ======= -->
+        @await Component.InvokeAsync("Service")
+        <!-- ======= Appointment Section ======= -->
+      
+        <!-- ======= Departments Section ======= -->
+    @await Component.InvokeAsync("Branch")
+        <!-- ======= Doctors Section ======= -->
+        @await Component.InvokeAsync("Doctor")
+        <!-- ======= Frequently Asked Questions Section ======= -->
+        @await Component.InvokeAsync("Question")
+        <!-- ======= Gallery Section ======= -->
+        @await Component.InvokeAsync("Gallery")
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            </section>
+        <div class="container">
+          <main role="main" class="pb-3">
+        @RenderBody()
+          </main>
+        </div>
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+  
+    @await Component.InvokeAsync("Footer")
+
+    @await Html.PartialAsync("/Views/Partial/ScriptPartial.cshtml")
+  
+</body>
+
+</html>

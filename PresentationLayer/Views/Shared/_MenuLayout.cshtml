@@ -1,0 +1,33 @@
+﻿
+<!DOCTYPE html>
+<html lang="tr">
+
+@await Html.PartialAsync("/Views/Partial/HeadPartial.cshtml")
+
+<body>
+
+    <!-- ======= Top Bar ======= -->
+    @await Component.InvokeAsync("Topbar")
+
+    <!-- ======= Header ======= -->
+    @await Html.PartialAsync("/Views/Partial/HeaderPartial.cshtml")
+
+    <main id="main">
+
+      
+        <section class="inner-page">
+            <div class="container">
+                <p>
+                    @RenderBody()
+                </p>
+            </div>
+        </section>
+
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    @await Component.InvokeAsync("Footer")
+
+    @await Html.PartialAsync("/Views/Partial/ScriptPartial.cshtml")
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+﻿@model DataAccessLayer.Entities.Contact
+@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/_MenuLayout.cshtml";
+}
+<section id="contact" class="contact">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>İletişim</h2>
+
+        </div>
+    </div>
+
+    <div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102174.38137051756!2d34.44707055911519!3d36.84368744908402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1527f597c18ea053%3A0x34bcb2ee264984e2!2sYeni%C5%9Fehir%2FMersin!5e0!3m2!1str!2str!4v1692965848871!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="container">
+        <div class="row mt-5">
+
+
+
+            <div class="col-lg-8 mt-5 mt-lg-0">
+
+                <form action="Contact" method="post" role="form" class="php-email-form">
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <input asp-for="Name" type="text"  class="form-control"  placeholder="Adınız" required>
+                        </div>
+                        <div class="col-md-6 form-group mt-3 mt-md-0">
+                            <input asp-for="Mail" type="email" class="form-control"  placeholder="E-Posta" required>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input asp-for="Subject" type="text" class="form-control" placeholder="Konu" required>
+                    </div>
+                    <div class="form-group mt-3">
+                        <textarea asp-for="Message" class="form-control"  rows="5" placeholder="Mesajınız" required></textarea>
+                    </div>
+                    <div class="my-3">
+                        <div class="loading">Gönderiliyor</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Your message has been sent. Thank you!</div>
+                    </div>
+                    <div class="text-center"><button type="submit">Mesaj Gönder</button></div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+</section><!-- End Contact Section -->
+
+

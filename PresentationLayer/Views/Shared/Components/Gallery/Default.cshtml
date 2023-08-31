@@ -1,0 +1,27 @@
+﻿@model List<DataAccessLayer.Entities.Gallery>
+<section id="gallery" class="gallery">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Galeri</h2>
+            <p>Fotoğraf galerimiz, hastanemizi yakından tanımanızı sağlayacak sadece birkaç örneği sunuyor. Sizleri hastanemize gerçek bir tur için bekleriz.</p>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row g-0">
+               @foreach (var item in Model)
+                {
+            <div class="col-lg-3 col-md-4">
+                <div class="gallery-item">
+                    <a href="~/Img/@item.ImageUrl" class="galelry-lightbox">
+                            <img src="~/Img/@item.ImageUrl" alt="" class="img-fluid">
+                    </a>
+                </div>
+            </div>
+
+                }
+        </div>
+
+    </div>
+</section><!-- End Gallery Section -->

@@ -1,0 +1,25 @@
+﻿@model List<DataAccessLayer.Entities.Question>
+<section id="faq" class="faq section-bg">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Sıkça Sorulan Sorular</h2>
+            <p>Sağlığınızı önemsiyoruz ve sizin için en iyi hizmeti sunmak amacıyla işte en sıkça sorulan soruların cevapları:</p>
+        </div>
+
+        <div class="faq-list">
+            <ul>@foreach (var item in Model)
+                {                   
+                <li data-aos="fade-up">
+                    <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#@item.TabIndex">@item.Title? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                    <div id="@item.TabIndex" class="collapse" data-bs-parent=".faq-list">
+                        <p>
+                     @item.Description
+                        </p>
+                    </div>
+                </li>
+                }
+            </ul>
+        </div>
+    </div>
+</section><!-- End Frequently Asked Questions Section -->

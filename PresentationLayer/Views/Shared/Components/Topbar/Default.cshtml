@@ -1,0 +1,20 @@
+﻿ 
+@model IEnumerable<DataAccessLayer.Entities.Topbar>
+ <div id="topbar" class="d-flex align-items-center fixed-top">
+        <div class="container d-flex justify-content-between">
+            @foreach (var item in Model)
+        {
+                  
+            <div class="contact-info d-flex align-items-center">
+                <i class="bi bi-envelope"></i> <a>@item.Mail</a>
+                <i class="bi bi-phone"></i> @item.Phone
+            </div>
+            <div class="d-none d-lg-flex social-links align-items-center">
+                <a href="@item.SocialMedia1" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="@item.SocialMedia2" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="@item.SocialMedia3" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="@item.SocialMedia4" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+        }
+        </div>
+    </div>

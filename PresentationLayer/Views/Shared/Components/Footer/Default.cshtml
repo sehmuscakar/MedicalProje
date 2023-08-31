@@ -1,0 +1,66 @@
+﻿@model List<DataAccessLayer.Entities.Footer>
+
+
+<footer id="footer">
+    @foreach (var item in Model)
+    {
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+            
+
+                <div class="col-lg-3 col-md-6 footer-contact">
+                 
+                   <h2> İletişim Bilgileri  </h2>
+                    <p>
+
+                            <strong>Adres:</strong> @item.Adress<br>     <br>
+                        <strong>Telefon:</strong> @item.Phone<br>
+                        <strong>Mail:</strong> @item.Mail<br>
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Hızlı Bağlantılar</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="/Home/Business">Hakkımızda</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="/Home/WhyUs">Neden Biz</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="/Home/Service">Hizmetler</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/Home/Question">Sık Sorulan Sorular</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Tıbbi Birimler</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="/Home/Branch">Bölümler</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="/Home/Doctor">Doktorlar</a></li>
+                    </ul>
+                </div>
+                 <div class="col-lg-3 col-md-6 footer-links">
+                        <h3  >MERSİN SAĞLIK HASTANESİ</h3>
+                </div>
+                  
+                  
+            </div>
+          
+        </div>
+        
+    </div>
+       
+    <div class="container d-md-flex py-4">
+
+        <div class="me-md-auto text-center text-md-start">
+            <div class="copyright">
+                   @DateTime.Now.Year <strong><span>Mersin Sağlık Hastanesi</span></strong>. Tüm Hakkları saklıdır
+            </div>
+          
+        </div>
+        <div class="social-links text-center text-md-right pt-3 pt-md-0">
+            <a href="@item.Twiter" class="twitter"><i class="bx bxl-twitter"></i></a>
+            <a href="@item.Facebook" class="facebook"><i class="bx bxl-facebook"></i></a>
+            <a href="@item.Instegram" class="instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="@item.Skype" class="google-plus"><i class="bx bxl-skype"></i></a>
+            <a href="@item.Linkedin" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+    </div>
+                    }
+</footer><!-- End Footer -->

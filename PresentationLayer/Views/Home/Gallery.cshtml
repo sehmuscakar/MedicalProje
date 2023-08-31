@@ -1,0 +1,8 @@
+﻿@model List<DataAccessLayer.Entities.Gallery>
+@{
+    ViewData["Title"] = "Gallery";
+    Layout = "~/Views/Shared/_MenuLayout.cshtml";
+}
+
+@await Component.InvokeAsync("Gallery")
+

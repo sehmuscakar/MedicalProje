@@ -1,0 +1,49 @@
+﻿@model List<DataAccessLayer.Entities.WhyUs>
+
+<section id="why-us" class="why-us">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+            <div class="col-lg-4 d-flex align-items-stretch">
+                <div class="content">           
+                    <h3>@item.Header</h3>
+                    <p>
+                    @item.HeaderDescription
+                    </p>
+                    <div class="text-center">
+                        <a href="/Home/Anasayfa" class="more-btn">Devamını Oku <i class="bx bx-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 d-flex align-items-stretch">
+                <div class="icon-boxes d-flex flex-column justify-content-center">
+                    <div class="row">
+                        <div class="col-xl-4 d-flex align-items-stretch">
+                            <div class="icon-box mt-4 mt-xl-0">
+                                <i class="bx bx-receipt"></i>
+                                <h4>@item.Title1</h4>
+                                <p>@item.TitleDecription1</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 d-flex align-items-stretch">
+                            <div class="icon-box mt-4 mt-xl-0">
+                                <i class="bx bx-cube-alt"></i>
+                                    <h4>@item.Title2</h4>
+                                    <p>@item.TitleDecription2</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 d-flex align-items-stretch">
+                            <div class="icon-box mt-4 mt-xl-0">
+                                <i class="bx bx-images"></i>
+                                  <h4>@item.Title3</h4>
+                                    <p>@item.TitleDecription3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End .content-->
+            </div>
+                    }
+        </div>
+    </div>
+</section><!-- End Why Us Section -->

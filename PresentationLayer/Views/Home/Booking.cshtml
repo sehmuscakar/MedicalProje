@@ -1,0 +1,56 @@
+﻿@model DataAccessLayer.Entities.Booking
+@{
+    ViewData["Title"] = "Booking";
+    Layout = "~/Views/Shared/_MenuLayout.cshtml";
+}
+
+<section id="appointment" class="appointment section-bg">
+    <div class="container">
+        <div class="section-title">
+            <h2>Randevu Al</h2>
+            <p>Size daha iyi hizmet sunabilmek ve beklemelerinizi en aza indirmek adına online randevu sistemimizi kullanabilirsiniz. Randevu alarak zamanınızı daha etkili bir şekilde yönetebilirsiniz.</p>
+        </div>
+        <form asp-action="Booking" method="post" role="form" class="php-email-form">
+            <div class="row">
+                <div class="col-md-4 form-group">
+                    <input asp-for="Name" type="text" class="form-control" placeholder="Adınız">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-md-4 form-group mt-3 mt-md-0">
+                    <input asp-for="Mail" type="email" class="form-control" placeholder="Mailiniz">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-md-4 form-group mt-3 mt-md-0">
+                    <input asp-for="Phone" type="text" class="form-control" placeholder="Telefonunuz">
+                    <div class="validate"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 form-group mt-3" >
+                    <div class="form-floating date"  data-target-input="nearest">
+                        <input asp-for="Tarih" class="form-control datetimepicker-input" placeholder="Tarih-Zaman" />           
+                    </div>
+                </div>
+                <div class="col-md-4 form-group mt-3">
+                    <input asp-for="Branch" type="text" class="form-control" placeholder="Muayne Olacağınız Bölüm">
+                    <div class="validate"></div>
+                </div>
+                <div class="col-md-4 form-group mt-3">
+                    <input asp-for="Doctor" type="text" class="form-control" placeholder="Muayne Olacağınız Doktor">
+                    <div class="validate"></div>
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <textarea asp-for="Message" class="form-control" rows="5" placeholder="Şikayetiniz"></textarea>
+                <div class="validate"></div>
+            </div>
+            <div class="mb-3">
+                <div class="loading">Gönderiliyor</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Randevu talebiniz başarıyla gönderildi. Teşekkür ederim!</div>
+            </div>
+            <div class="text-center"><button type="submit">Randevu Al</button></div>
+        </form>
+
+    </div>
+</section><!-- End Appointment Section -->

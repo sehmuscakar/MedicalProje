@@ -1,0 +1,102 @@
+﻿@model IEnumerable<DataAccessLayer.Dtos.AdminDtos.WhyUsListDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Neden Biz Liste Paneli</h3>
+<br />
+<p>
+    <a class="btn btn-outline-success" asp-action="Create">Yeni Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Ana Başlık")
+            </th>
+            <th>
+                @Html.DisplayName("Ana Başlık Açıklama")
+            </th>
+            <th>
+                @Html.DisplayName("Başlık1")
+            </th>
+            <th>
+                @Html.DisplayName("Başlık1 Açıklama")
+            </th>
+            <th>
+                @Html.DisplayName("Başlık2")
+            </th>
+            <th>
+                @Html.DisplayName("Başlık2 Açıklama")
+            </th>
+            <th>
+                @Html.DisplayName("Başlık3")
+            </th>
+            <th>
+                @Html.DisplayName("Başlık3 Açıklama")
+            </th>
+            <th>
+                @Html.DisplayName("Durum")
+            </th>
+            <th>
+                @Html.DisplayName("Son Güncellenme")
+            </th>
+            <th>
+                @Html.DisplayName("Sırası")
+            </th>
+            <th>
+                @Html.DisplayName("Kim Ekledi")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HeaderDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TitleDecription1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TitleDecription2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TitleDecription3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastUpdatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RowOrder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedFullName)
+            </td>
+            <td>
+                    <a class="btn btn-outline-danger" asp-action="Edit" asp-route-id="@item.Id">Güncelle</a>
+                    <hr>
+                    <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
